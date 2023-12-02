@@ -21,11 +21,10 @@ def GameValidator(pulls):
 
 with open("data.txt") as input:
     for line in input:
-        impossibleFlag = False
         line = line.rstrip()
         game,pulls = line.split(":")
         gameNumber = int(game.split()[1])
-        if(GameValidator(pulls) != False):
+        if(GameValidator(pulls) == True):
              validGames.append(gameNumber)
         
 print(f"Sum of valid games: {sum(validGames)}")
